@@ -6,55 +6,72 @@ const [ ,otherRandomCar ] = cars
 console.log(randomCar)
 console.log(otherRandomCar)
 
+// the first car from the cars array
+// the second car from the cars array
 
 
-// // Problem 2
-// const employee = {
-//     name: 'Elon',
-//     age: 47,
-//     company: 'Tesla'
-// }
-// const { name: otherName } = employee;
-// //Predict the output
-// console.log(name);
-// console.log(otherName);
+// Problem 2
+const employee = {
+    name: 'Elon',
+    age: 47,
+    company: 'Tesla'
+}
+const { name: otherName } = employee;
+//Predict the output
+console.log(name);
+console.log(otherName);
+
+// will throw a reference error for the name not being defined
+// will print Elon
 
 
+// Problem 3
+const person = {
+    name: 'Phil Smith',
+    age: 47,
+    height: '6 feet'
+}
+const password = '12345';
+const { password: hashedPassword } = person;  
+//Predict the output
+console.log(password);
+console.log(hashedPassword);
 
-// // Problem 3
-// const person = {
-//     name: 'Phil Smith',
-//     age: 47,
-//     height: '6 feet'
-// }
-// const password = '12345';
-// const { password: hashedPassword } = person;  
-// //Predict the output
-// console.log(password);
-// console.log(hashedPassword);
-
-
-
-
-// // Problem 4
-// const numbers = [8, 2, 3, 5, 6, 1, 67, 12, 2];
-// const [,first] = numbers;
-// const [,,,second] = numbers;
-// const [,,,,,,,,third] = numbers;
-// //Predict the output
-// console.log(first == second);
-// console.log(first == third);
+// will print 12345
+// will print undefined
 
 
 
-// // Problem 5
-// const numbers = [8, 2, 3, 5, 6, 1, 67, 12, 2];
-// const [,first] = numbers;
-// const [,,,second] = numbers;
-// const [,,,,,,,,third] = numbers;
-// //Predict the output
-// console.log(first == second);
-// console.log(first == third);
+// Problem 4
+const numbers = [8, 2, 3, 5, 6, 1, 67, 12, 2];
+const [,first] = numbers;
+const [,,,second] = numbers;
+const [,,,,,,,,third] = numbers;
+//Predict the output
+console.log(first == second);
+console.log(first == third);
+
+// will print false
+// wil print true
 
 
+
+// Problem 5
+const lastTest = {
+    key: 'value',
+    secondKey: [1, 5, 1, 8, 3, 3]
+}
+const { key } = lastTest;
+const { secondKey } = lastTest;
+const [ ,willThisWork] = secondKey;
+//Predict the output
+console.log(key);
+console.log(secondKey);
+console.log(secondKey[0]);
+console.log(willThisWork);
+
+// will print value
+// will print the second key array
+// will print 1
+// will print 5
 

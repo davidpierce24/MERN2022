@@ -5,7 +5,10 @@ function App() {
   return (
     <div className="App">
       <h1>Yo Yo Yo</h1>
-      <First/>
+      <First firstName="Dave"/>
+      <First firstName="Shmave"/>
+      <First firstName="Rave"/>
+      <First firstName="Lave"/>
     </div>
   );
 }

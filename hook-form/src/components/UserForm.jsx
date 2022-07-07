@@ -7,6 +7,10 @@ const UserForm = (props) => {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
 
+    const style = {
+        padding: "80px"
+    }
+
     const createUser = (e) => {
         e.preventDefault();
         const newUser = { firstName, lastName, email, password, confirmPassword };
@@ -14,7 +18,7 @@ const UserForm = (props) => {
 
 
     return (
-        <div>
+        <div style={style}>
             <form onSubmit={ createUser }>
                 <div>
                     <label>First Name: </label>
@@ -30,21 +34,21 @@ const UserForm = (props) => {
                 </div>
                 <div>
                     <label>Password: </label>
-                    <input type="text" onChange = { (e) => setPassword(e.target.value) } />
+                    <input type="password" onChange = { (e) => setPassword(e.target.value) } />
                 </div>
                 <div>
                     <label>Confirm Password: </label>
-                    <input type="text" onChange = { (e) => setConfirmPassword(e.target.value) } />
+                    <input type="password" onChange = { (e) => setConfirmPassword(e.target.value) } />
                 </div>
                 <input type="submit" value="Create User" />
             </form>
 
             <div>
                 <p>First Name: { firstName } </p>
-                <p>First Name: { lastName } </p>
-                <p>First Name: { email } </p>
-                <p>First Name: { password } </p>
-                <p>First Name: { confirmPassword } </p>
+                <p>Last Name: { lastName } </p>
+                <p>Email: { email } </p>
+                <p>Password: { password } </p>
+                <p>Confirm Password: { confirmPassword } </p>
             </div>
         </div>
             

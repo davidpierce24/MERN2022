@@ -43,9 +43,8 @@ const TodoList = props => {
             <ul>
                 {
                     list.map( (item, i) => 
-                    <div key={ i }>
+                    <div key={ i } style={{display:"flex", justifyContent:"space-around"}}>
                         <li  style={item.todo ? blank : crossOut } onClick={e => finish(i)}> { item.item } </li><button onClick={e => removeItem(i)}>Remove</button>
-                        
                     </div>
                     
                     )

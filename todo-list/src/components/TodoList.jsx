@@ -47,7 +47,7 @@ const TodoList = props => {
                     list.map( (item, i) => 
                     <div key={ i } style={{display:"flex", justifyContent:"center", padding:"5px"}}>
                         <li  style={item.todo ? blank : crossOut } onClick={e => finish(i)}> { item.item } </li>
-                        <input type="checkbox" onClick={e => finish(i)} checked={!item.todo} style={{marginRight:"10px"}}/>
+                        <input type="checkbox" onChange={e => finish(i)} checked={!item.todo} style={{marginRight:"10px"}}/>
                         <button onClick={e => removeItem(i)} style={{marginRight:"10px", backgroundColor:"fuchsia"}} >Remove</button>
                     </div>
                     

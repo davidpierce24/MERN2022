@@ -39,7 +39,7 @@ const TodoList = props => {
             <form onSubmit={handleSubmit}>
                 <label htmlFor="item">Add an Item to your Todo List </label> <br />
                 <input type="text" />
-                <input type="submit" value="Add to Todo List" />
+                <input type="submit" value="Add to Todo List" style={{backgroundColor:"cyan"}} />
             </form>
             <p>{fresh}</p>
             <ul>
@@ -48,7 +48,7 @@ const TodoList = props => {
                     <div key={ i } style={{display:"flex", justifyContent:"center", padding:"5px"}}>
                         <li  style={item.todo ? blank : crossOut } onClick={e => finish(i)}> { item.item } </li>
                         <input type="checkbox" onClick={e => finish(i)} checked={!item.todo} style={{marginRight:"10px"}}/>
-                        <button onClick={e => removeItem(i)} style={{marginRight:"10px"}} >Remove</button>
+                        <button onClick={e => removeItem(i)} style={{marginRight:"10px", backgroundColor:"fuchsia"}} >Remove</button>
                     </div>
                     
                     )

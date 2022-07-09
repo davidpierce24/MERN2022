@@ -12,11 +12,13 @@ const TodoList = props => {
 
     const crossOut = {
         textDecoration: "line-through",
-        cursor: "pointer"
+        cursor: "pointer", 
+        marginRight: "10px"
     }
     
     const blank = {
-        cursor: "pointer"
+        cursor: "pointer",
+        marginRight: "10px"
     }
 
     let fresh
@@ -43,8 +45,10 @@ const TodoList = props => {
             <ul>
                 {
                     list.map( (item, i) => 
-                    <div key={ i } style={{display:"flex", justifyContent:"space-around"}}>
-                        <li  style={item.todo ? blank : crossOut } onClick={e => finish(i)}> { item.item } </li><button onClick={e => removeItem(i)}>Remove</button>
+                    <div key={ i } style={{display:"flex", justifyContent:"center", padding:"5px"}}>
+                        <li  style={item.todo ? blank : crossOut } onClick={e => finish(i)}> { item.item } </li>
+                        <input type="checkbox" onClick={e => finish(i)} checked={!item.todo} style={{marginRight:"10px"}}/>
+                        <button onClick={e => removeItem(i)} style={{marginRight:"10px"}} >Remove</button>
                     </div>
                     
                     )

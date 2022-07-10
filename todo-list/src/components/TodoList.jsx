@@ -1,37 +1,39 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+import Todo from "./Todo";
 
 const TodoList = props => {
     const [list, setList] = useState([]);
+
+    useEffect(() => {
+        const saved = JSON.parse(localStorage.getItem("list"))
+        if(saved) {
+            setList(saved)
+        }
+    }, [setList])
     
     const handleSubmit = (e) => {
         e.preventDefault();
         let newList = [...list, {item: e.target[0].value, todo: true, id: list.length+1}]
         setList(newList);
         e.target[0].value = "";
-    }
-
-    const crossOut = {
-        textDecoration: "line-through",
-        cursor: "pointer", 
-        marginRight: "10px"
+        localStorage.setItem("list", JSON.stringify(list))
     }
     
-    const blank = {
-        cursor: "pointer",
-        marginRight: "10px"
-    }
-
-    let fresh
-
+    
+    
     const finish = (idx) => {
         const filtered = list.map((item, i) => i === idx ? {...item, todo: !item.todo} : {...item});
         setList(filtered);
+        localStorage.setItem("list", JSON.stringify(list))
     }
-
+    
     const removeItem = idx => {
         const removed = list.filter((item, i) =>{ return i !== idx })
         setList(removed);
+        localStorage.setItem("list", JSON.stringify(list))
     }
+
 
     return (
         <div>
@@ -41,15 +43,12 @@ const TodoList = props => {
                 <input type="text" />
                 <input type="submit" value="Add to Todo List" style={{backgroundColor:"cyan"}} />
             </form>
-            <p>{fresh}</p>
+
+            
             <ul>
                 {
                     list.map( (item, i) => 
-                    <div key={ i } style={{display:"flex", justifyContent:"center", padding:"5px"}}>
-                        <li  style={item.todo ? blank : crossOut } onClick={e => finish(i)}> { item.item } </li>
-                        <input type="checkbox" onChange={e => finish(i)} checked={!item.todo} style={{marginRight:"10px"}}/>
-                        <button onClick={e => removeItem(i)} style={{marginRight:"10px", backgroundColor:"fuchsia"}} >Remove</button>
-                    </div>
+                    <Todo item={item} i={i} removeItem={removeItem} finish={finish}/>
                     
                     )
                 }

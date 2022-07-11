@@ -5,6 +5,8 @@ const BoxForm = props => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setBox({"color": e.target[0].value, "size": e.target[1].value })
+        props.boxAdd(box);
         
     }
 
@@ -12,10 +14,16 @@ const BoxForm = props => {
         <div>
             <h2>Create a Box</h2>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="color">Color</label>
-                <input type="text" />
-                <label htmlFor="size">Size</label>
-                <input type="number" />
+                <div>
+                    <label htmlFor="color">Color</label>
+                    <input type="text" />
+                </div>
+                <div>
+                    <label htmlFor="size">Size</label>
+                    <input type="number" />
+                </div>
+                
+                <input type="submit" value="Create Box" />
             </form>
         </div>
     );

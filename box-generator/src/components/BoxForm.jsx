@@ -1,13 +1,16 @@
 import { useState } from "react";
 
 const BoxForm = props => {
-    const [box, setBox] = useState("");
+    const [color, setColor] = useState("");
+    const [size, setSize] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setBox({"color": e.target[0].value, "size": e.target[1].value })
+        // setBox({"color": e.target[0].value, "size": e.target[1].value })
+        let box = {"color": color, "size": size}
         props.boxAdd(box);
-        
+        setColor("");
+        setSize("");
     }
 
     return(
@@ -16,11 +19,11 @@ const BoxForm = props => {
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="color">Color</label>
-                    <input type="text" />
+                    <input type="text" onChange={ e => setColor(e.target.value) } value={ color }/>
                 </div>
                 <div>
                     <label htmlFor="size">Size</label>
-                    <input type="number" />
+                    <input type="number" onChange={e => setSize(e.target.value)} value={ size } />
                 </div>
                 
                 <input type="submit" value="Create Box" />

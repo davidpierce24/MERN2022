@@ -5,7 +5,7 @@ import Todo from "./Todo";
 const TodoList = props => {
     const [item, setItem] = useState("");
     const [list, setList] = useState([]);
-
+    const [update, setUpdate] = useState(true);
     
     
     
@@ -17,8 +17,9 @@ const TodoList = props => {
         setList(newList);
         setItem("");
         
-        store();
-        
+        setUpdate(!update);
+        console.log(list)
+
     }
     
     
@@ -37,16 +38,17 @@ const TodoList = props => {
         store();
     }
     
-    useEffect(() => {
-        const saved = JSON.parse(localStorage.getItem("list"))
-        if(saved) {
-            setList(saved)
-        }
-    }, [setList])
-    
     // useEffect(() => {
-    //         localStorage.setItem("list", JSON.stringify(list))
-    //     }, [list])
+    //     const saved = JSON.parse(localStorage.getItem("list"))
+    //     if(saved) {
+    //         setList(saved)
+    //     }
+        
+    // }, [setList])
+    
+    useEffect(() => {
+        store();
+        }, [update])
 
     return (
         <div>

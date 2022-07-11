@@ -5,14 +5,10 @@ import Todo from "./Todo";
 const TodoList = props => {
     const [list, setList] = useState([]);
 
-    useEffect(() => {
-        const saved = JSON.parse(localStorage.getItem("list"))
-        if(saved) {
-            setList(saved)
-        }
-    }, [setList])
     
-
+    
+    
+    
     const handleSubmit = (e) => {
         e.preventDefault();
         let newList = [...list, {item: e.target[0].value, todo: true, id: list.length+1}]
@@ -38,6 +34,14 @@ const TodoList = props => {
         setList(removed);
         setTimeout(store, 200)
     }
+    
+    useEffect(() => {
+        const saved = JSON.parse(localStorage.getItem("list"))
+        if(saved) {
+            setList(saved)
+        }
+    }, [setList])
+    
 
 
     return (

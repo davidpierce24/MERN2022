@@ -5,17 +5,17 @@ import Results from './components/Results';
 import { useState } from 'react';
 
 function App() {
-  const [hero, setHero] = useState({});
-  
+  const [heroList, setHeroList] = useState([]);
+
 
   const newHero = hero => {
-    setHero(hero);
+    setHeroList([...heroList, hero]);
   }
 
   return (
     <div className="App">
       <Form newHero={newHero} />
-      <Results myHero={hero} />
+      <Results Heros={heroList} />
     </div>
   );
 }

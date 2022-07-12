@@ -8,8 +8,8 @@ function App() {
 
   const handleClick = (e) => {
     axios.get("https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0")
-      .then(response => setPokeList(response.data.results))
-      // .then(response => console.log(response.data))
+    .then(response => setPokeList(response.data.results))
+    // .then(response => console.log(response.data))
       .catch(err => console.log(err))
   }
 

@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <form action="">
-        <div style={{display:"flex", justifyContent:"center", gap:"10px"}}>
+        <div style={{display:"flex", justifyContent:"center", gap:"10px", margin:"20px"}}>
           <label htmlFor="searchFor">Search For: </label>
           <select name="searchFor">
             <option value="people">people</option>
@@ -14,7 +14,7 @@ function App() {
           </select>
           <label htmlFor="id">ID: </label>
           <input type="number" />
-          <input type="submit" value="Search" />
+          <input type="submit" value="Search" style={{backgroundColor:"cyan"}}/>
         </div>
       </form>
 

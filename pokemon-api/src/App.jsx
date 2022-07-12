@@ -3,11 +3,12 @@ import { useState } from 'react';
 
 
 function App() {
-  const [pokeList, setPokeList] = useState("");
+  const [pokeList, setPokeList] = useState([]);
 
   const handleClick = (e) => {
     fetch("https://pokeapi.co/api/v2/pokemon")
-      .then(response => response.json)
+      .then(response => response.json())
+      .then(response => console.log(response))
       .then(response => setPokeList(response.results))
       .catch(err => console.log(err))
   }

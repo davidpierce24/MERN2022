@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const People = props => {
     const [person, setPerson] = useState("");
     const [homeworld, setHomeworld] = useState("");
-    const [homeid, setHomeid] = useState([]);
+    const [homeid, setHomeid] = useState(1);
     const { id } = useParams();
     // const {person} = props
 
@@ -25,17 +25,17 @@ const People = props => {
     
 
     // useEffect(() => {
-    //     setHomeid(person.homeworld)
-    //     // setHomeid(...homeid.replace(/\D/g, ''))
-    //     console.log(homeid)
-    // },[person])
+    //     setHomeid(homeid.replace(/[\D]/g, ''))
+    //     // console.log(homeid.replace(/[\D]/g, ''))
+    // },[homeworld])
         
 
 
     
     // console.log(home)
     // let home2 = 
-    
+    // let dog = "dashboard"
+    // console.log(dog)
     
 
     // let planetId = person.homeworld

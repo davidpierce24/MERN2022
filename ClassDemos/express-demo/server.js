@@ -31,6 +31,9 @@ app.post('/post', (req, res) => {
     res.json(users)
 })
 
+app.get('/users/:id', (req, res) => {
+    res.json(users[req.params.id])
+})
 
 
 

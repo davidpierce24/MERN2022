@@ -18,11 +18,11 @@ const ProductForm = props => {
             .then(res => console.log(res))
             .catch(err => console.log(err))
 
-        setTitle("");
-        setPrice(0);
-        setDescription("");
+        // setTitle("");
+        // setPrice(0);
+        // setDescription("");
     }
-    
+
 
     return (
         <div>
@@ -38,7 +38,7 @@ const ProductForm = props => {
                 </div>
                 <div>
                     <label htmlFor="description">Description</label>
-                    <textarea name="description" cols="30" rows="10" onChange={e => setDescription(e.target.value)} value={description}></textarea>
+                    <textarea name="description" cols="25" rows="5" onChange={e => setDescription(e.target.value)} value={description}></textarea>
                 </div>
                 <input type="submit" value="Add Product" />
             </form>

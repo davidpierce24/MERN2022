@@ -18,9 +18,9 @@ const ProductForm = props => {
             .then(res => console.log(res))
             .catch(err => console.log(err))
 
-        // setTitle("");
-        // setPrice(0);
-        // setDescription("");
+        setTitle("");
+        setPrice(0);
+        setDescription("");
     }
 
 

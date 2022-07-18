@@ -1,5 +1,6 @@
 import AuthorForm from "../components/AuthorForm";
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const AddAuthor = props => {
 
@@ -14,6 +15,7 @@ const AddAuthor = props => {
 
     return (
         <div className="">
+            <Link to={-1} ></Link>
             <h4>Add a new author: </h4>
             <AuthorForm submitFunc={addAuthor} initialName={''} />
         </div>

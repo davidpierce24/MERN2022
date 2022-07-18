@@ -15,9 +15,9 @@ const Detail = props => {
 
     return (
         <div>
-            <p>{product.title}</p>
-            <p>{product.price}</p>
-            <p>{product.description}</p>
+            <p>Title: {product.title}</p>
+            <p>Price: ${product.price}</p>
+            <p>Description: {product.description}</p>
         </div>
     )
 }

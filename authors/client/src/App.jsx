@@ -9,6 +9,7 @@ import UpdateAuthor from './views/UpdateAuthor';
 function App() {
   return (
     <div className="App">
+      <h1>Favorite Authors</h1>
       <Routes>
         <Route element={<Main />} path="/authors" />
         <Route element={<AddAuthor />} path="/authors/create" />

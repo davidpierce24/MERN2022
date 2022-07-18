@@ -26,11 +26,12 @@ const UpdateAuthor = props => {
         })
             .then(res => console.log(res))
             .catch(err => {
-                const errorResponse = err.response.data.erros;
+                const errorResponse = err.response.data.errors;
                 const errorArr = [];
                 for (const key of Object.keys(errorResponse)) {
                     errorArr.push(errorResponse[key].message)
                 }
+                console.log(errorArr)
                 setError(errorArr);
             })
     }

@@ -1,4 +1,5 @@
-const Product = require('../models/product.model');
+// must have curly braces around the import to do a one line export for the model
+const { Product } = require('../models/product.model');
 
 // create a product
 module.exports.createProduct = (req, res) => {

@@ -15,10 +15,10 @@ const ProductSchema = new mongoose.Schema({
     }
 }, { timestamps: true });
 
-const Product = mongoose.model('Product', ProductSchema)
+// const Product = mongoose.model('Product', ProductSchema)
 
-module.exports = Product;
+// module.exports = Product;
 
-// why does the above work but what's below doesn't
+// below will only work if controller uses curly braces around the import
 
-// module.exports.Product = mongoose.model('Product', ProductSchema)
+module.exports.Product = mongoose.model('Product', ProductSchema)

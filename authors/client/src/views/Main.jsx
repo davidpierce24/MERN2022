@@ -14,6 +14,8 @@ const Main = props => {
 
     return (
         <div>
+            <h1>Favorite Authors</h1>
+            
             <AuthorList authors={authors} />
         </div>
     )

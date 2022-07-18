@@ -5,7 +5,11 @@ const ProductList = props => {
 
     return (
         <div>
-
+            {
+                props.products.map((product, i) => 
+                    <p key={i} >{product.title} | ${product.price}</p>
+                )
+            }
         </div>
     )
 }

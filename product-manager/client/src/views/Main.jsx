@@ -14,7 +14,7 @@ const Main = props => {
                 setLoaded(true);
             })
             .catch(err => console.log(err));
-    }, []);
+    }, [products]);
 
     return (
         <div>

@@ -14,7 +14,7 @@ const AddAuthor = props => {
     }
 
     return (
-        <div className="">
+        <div>
             <Link to={-1} >Home</Link>
             <h5>Add a new author: </h5>
             <AuthorForm submitFunc={addAuthor} initialName={''} />

@@ -1,7 +1,7 @@
-const { Author } = require('../models/product.model');
+const { Author } = require('../models/author.model');
 
 // create an author
-module.exports.create = (req, res) => {
+module.exports.createAuthor = (req, res) => {
     const { name } = req.body;
     Author.create({
         name

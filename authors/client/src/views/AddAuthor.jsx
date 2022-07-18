@@ -15,8 +15,8 @@ const AddAuthor = props => {
 
     return (
         <div className="">
-            <Link to={-1} ></Link>
-            <h4>Add a new author: </h4>
+            <Link to={-1} >Home</Link>
+            <h5>Add a new author: </h5>
             <AuthorForm submitFunc={addAuthor} initialName={''} />
         </div>
     )

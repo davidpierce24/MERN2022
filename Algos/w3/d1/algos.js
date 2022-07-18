@@ -42,14 +42,15 @@ function easyQueries(table, obj) {
     
     for(let i in obj){
         keys.push(i)
-        values.push(obj[i])
+        values.push(`'${obj[i]}'`)
     }
     
     let keyData = keys.join(", ").toString()
     let valueData = values.join(", ").toString()
     
     
-    return `INSERT INTO ${table} (${keyData}) VALUES (${valueData});`
+    return `"INSERT INTO ${table} (${keyData}) VALUES (${valueData});"`
 }
+
 
 console.log(easyQueries("users", { first_name: "John", last_name: "Doe" }))

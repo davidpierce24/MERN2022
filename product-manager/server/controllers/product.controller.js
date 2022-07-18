@@ -13,10 +13,11 @@ module.exports.createProduct = (req, res) => {
         .catch(err => res.json(err))
 }
 
-
 // pull all products
 module.exports.findAllProducts = (req, res) => {
     Product.find({})
         .then(allProducts => res.json(allProducts))
         .catch(err => res.json(err))
 }
+
+// pull a single product by id

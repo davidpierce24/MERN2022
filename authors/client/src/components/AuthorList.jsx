@@ -3,6 +3,12 @@ import axios from 'axios';
 
 const AuthorList = props => {
 
+    // const deleteAuthor = (id) => {
+    //     axios.delete('http://localhost:8000/api/authors/delete/' + id)
+    //         .then(res => console.log(res))
+    //         .catch(err => console.log(err))
+    // }
+
     return (
         <div className='d-flex justify-content-center'>
             <table className='table table-striped w-50'>
@@ -17,7 +23,7 @@ const AuthorList = props => {
                     props.authors.map((author, i) => 
                         <tr key={i}>
                             <td>{author.name}</td>
-                            <td> <Link to={"/authors/" + author._id + "/edit" } className="btn btn-sm btn-warning">Edit</Link> | Delete</td>
+                            <td> <Link to={"/authors/" + author._id + "/edit" } className="btn btn-sm btn-warning">Edit</Link> | <button className='btn btn-sm btn-danger' onClick={e => props.delete(author._id)}>Delete</button></td>
                         </tr>
                     )
                 }

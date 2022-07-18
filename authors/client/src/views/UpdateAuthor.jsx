@@ -8,7 +8,7 @@ const UpdateAuthor = props => {
     const [name, setName] = useState('');
     const { id } = useParams();
     const [loaded, setLoaded] = useState(false);
-    const navigate = useNavigate();
+    const [error, setError] = useState([]);
 
     useEffect(() => {
         axios.get('http://localhost:8000/api/authors/' + id)
@@ -25,13 +25,21 @@ const UpdateAuthor = props => {
             name
         })
             .then(res => console.log(res))
-            .catch(err => console.log(err))
+            .catch(err => {
+                const errorResponse = err.response.data.erros;
+                const errorArr = [];
+                for (const key of Object.keys(errorResponse)) {
+                    errorArr.push(errorResponse[key].message)
+                }
+                setError(errorArr);
+            })
     }
 
     return (
         <div>
             <Link to={-1} >Home</Link>
             <h5>Edit author: </h5>
+            {error.map((err, index) => <p key={index}>{err}</p>)}
             {
                 loaded && (
                     <AuthorForm submitFunc={updateAuthor} initialName={name}/>

@@ -18,7 +18,8 @@ const Detail = props => {
             <p>Title: {product.title}</p>
             <p>Price: ${product.price}</p>
             <p>Description: {product.description}</p>
-            <button> <Link to={`/products/${id}/edit`}>Edit</Link> </button>
+            <button> <Link to={`/products/${id}/edit`}>Edit</Link> </button><br />
+            <Link to={`/products`}>Home</Link>
         </div>
     )
 }

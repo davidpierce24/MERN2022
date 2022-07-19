@@ -30,7 +30,7 @@ const UpdateAuthor = props => {
             })
             .catch(err => {
                 console.log("cool")
-                const errorResponse = err.response.data.errors;
+                const errorResponse = err.response.data.error.errors;
                 const errorArr = [];
                 for (const key of Object.keys(errorResponse)) {
                     errorArr.push(errorResponse[key].message)

@@ -8,8 +8,7 @@ module.exports.createAuthor = (req, res) => {
     })
         .then(author => res.json(author))
         .catch(err => {
-            // res.status(400).json(err)
-            res.json({message: "something went wrong when creating an author", error: err})
+            res.status(400).json({message: "something went wrong when creating an author", error: err})
         })
 }
 
@@ -35,7 +34,7 @@ module.exports.updateAuthor = (req, res) => {
         {new: true, runValidators: true}
     )
         .then(updatedAuthor => res.json(updatedAuthor))
-        .catch(err => res.json({message: "something went wrong when updating an author", error: err}))
+        .catch(err => res.status(400).json({message: "something went wrong when updating an author", error: err}))
 }
 
 // delete an author by id

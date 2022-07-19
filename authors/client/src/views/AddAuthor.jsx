@@ -11,9 +11,11 @@ const AddAuthor = props => {
         axios.post('http://localhost:8000/api/authors/create', {
             name
         })
-            .then(res => console.log(res))
+            .then(res => {
+                console.log(res)
+            })
             .catch(err => {
-                const errorResponse = err.response.data.errors;
+                const errorResponse = err.response.data.error.errors;
                 const errorArr = [];
                 for (const key of Object.keys(errorResponse)) {
                     errorArr.push(errorResponse[key].message)
@@ -21,7 +23,6 @@ const AddAuthor = props => {
                 console.log(errorArr)
                 setError(errorArr);
             })
-        
     }
 
     return (

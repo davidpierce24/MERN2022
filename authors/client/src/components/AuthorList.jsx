@@ -20,7 +20,7 @@ const AuthorList = props => {
                 </thead>
                 <tbody>
                     {
-                    props.authors.map((author, i) => 
+                    props.authors.sort((a, b) => a.name.localeCompare(b.name)).map((author, i) => 
                         <tr key={i}>
                             <td>{author.name}</td>
                             <td> <Link to={"/authors/" + author._id + "/edit" } className="btn btn-sm btn-warning">Edit</Link> | <button className='btn btn-sm btn-danger' onClick={e => props.delete(author._id)}>Delete</button></td>

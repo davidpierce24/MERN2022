@@ -24,8 +24,12 @@ const UpdateAuthor = props => {
         axios.put('http://localhost:8000/api/authors/update/' + id, {
             name
         })
-            .then(res => console.log(res))
+            .then(res => {
+                console.log(res)
+                console.log("csalkdfja")
+            })
             .catch(err => {
+                console.log("cool")
                 const errorResponse = err.response.data.errors;
                 const errorArr = [];
                 for (const key of Object.keys(errorResponse)) {
@@ -45,6 +49,9 @@ const UpdateAuthor = props => {
                 loaded && (
                     <AuthorForm submitFunc={updateAuthor} initialName={name}/>
                 )
+            }
+            {
+                name ? "" : "sorry this author could not be found"
             }
             
         </div>

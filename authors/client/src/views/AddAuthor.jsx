@@ -1,10 +1,11 @@
 import AuthorForm from "../components/AuthorForm";
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from "react";
 
 const AddAuthor = props => {
     const [error, setError] = useState([]);
+    const navigate = useNavigate();
 
     const addAuthor = (name) => {
         axios.post('http://localhost:8000/api/authors/create', {
@@ -20,6 +21,7 @@ const AddAuthor = props => {
                 console.log(errorArr)
                 setError(errorArr);
             })
+        
     }
 
     return (

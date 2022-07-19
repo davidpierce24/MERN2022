@@ -8,7 +8,7 @@ const AuthorForm = props => {
     const onSubmitHandler = e => {
         e.preventDefault();
         props.submitFunc(name)
-        // navigate(-1);
+        navigate(-1);
     }
 
     return (

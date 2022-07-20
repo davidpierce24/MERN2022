@@ -67,14 +67,14 @@ console.log(hab(badHabit3,students ))
 
 
 
-    // function hab(habit, arr) {
-    //     let temp = [];
-    //     for(let i in arr){
-    //         for(let j in arr[i]){
-    //             if(j == "habits" && arr[i][j].includes(habit)){
-    //                 temp.push(`${arr[i].firstName} ${arr[i].lastName}`)
-    //             }
-    //         }
-    //     }
-    //     return temp
-    // }
+// function hab(habit, arr) {
+//     let temp = [];
+//     for(let i in arr){
+//         for(let j in arr[i]){
+//             if(j == "habits" && arr[i][j].includes(habit)){
+//                 temp.push(`${arr[i].firstName} ${arr[i].lastName}`)
+//             }
+//         }
+//     }
+//     return temp
+// }

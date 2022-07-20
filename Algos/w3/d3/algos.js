@@ -51,22 +51,6 @@ console.log(hab(badHabit3,students ))
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // function hab(habit, arr) {
 //     let temp = [];
 //     for(let i in arr){

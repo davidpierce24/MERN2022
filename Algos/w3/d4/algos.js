@@ -70,13 +70,14 @@ const wishList4 = [];
 const expected4 = [hoodie];
 
 function fullCart(cart, wish) {
+    let cart2 = [...cart]
     for(let i in wish) {
-        if(cart.includes(wish[i])){
+        if(cart2.includes(wish[i])){
             continue
         }
-        cart.push(wish[i])
+        cart2.push(wish[i])
     }
-    return cart
+    return cart2
 }
 
-console.log(fullCart(shoppingCart2, wishList2))
+console.log(fullCart(shoppingCart3, wishList3))

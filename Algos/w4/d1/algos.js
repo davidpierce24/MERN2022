@@ -32,23 +32,25 @@ function isPal (str) {
     }
     let map = {}
     for(let i in str){
+        console.log(str[i])
         if(str[i] in map) {
-            map.i += 1;
+            map[str[i]] += 1;
         } else {
-            map[i] = 1
+            map[str[i]] = 1;
         }
     }
+    console.log(map)
     if(str.length%2 == 0){
-        for(let j of map){
-            if(j%2 != 0){
+        for(let j in map){
+            if(map[j]%2 != 0){
                 return false
             }
         }
         return true
     } else {
         let count = 0
-        for(let k of map){
-            if(k%2 != 0){
+        for(let k in map){
+            if(map[k]%2 != 0){
                 count ++
             }
             if(count > 1){
@@ -59,4 +61,4 @@ function isPal (str) {
     }
 }
 
-console.log(isPal("ada"))
+console.log(isPal("addadc"))

@@ -39,7 +39,6 @@ function isPal (str) {
             map[str[i]] = 1;
         }
     }
-    console.log(map)
     if(str.length%2 == 0){
         for(let j in map){
             if(map[j]%2 != 0){
@@ -61,4 +60,6 @@ function isPal (str) {
     }
 }
 
-console.log(isPal("addadc"))
+// console.log(isPal("addadc"))
+
+
